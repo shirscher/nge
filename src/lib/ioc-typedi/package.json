@@ -1,0 +1,22 @@
+{
+  "name": "@nge/ioc-inversify",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tslint . && tsc",
+    "watch": "tsc -w"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "inversify": "4.2.0",
+    "reflect-metadata": "0.1.10"
+  },
+  "devDependencies": {
+    "@types/jasmine": "2.5.53",
+    "@types/node": "8.0.13",
+    "jasmine": "2.6.0",
+    "typescript": "2.4.1"
+  }
+}
