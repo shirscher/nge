@@ -12,7 +12,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@nge/ioc": "0.1.0",
+    "@nge/ioc-core": "0.1.0",
     "@nge/ioc-inversify": "0.1.0",
     "@nge/logging-core": "0.1.0",
     "hapi": "16.4.3"

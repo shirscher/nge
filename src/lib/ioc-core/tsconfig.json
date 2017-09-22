@@ -9,12 +9,17 @@
         "sourceMap": true,
         "strict": true,
         "declaration": true,
-        "lib": ["es6"],
         "types": ["jasmine"],
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "noImplicitReturns": true
+        "noImplicitReturns": true,
+        "paths": {
+            "*": [
+                "node_modules/@types/*",
+                "*"
+            ]
+        }
     }
 }

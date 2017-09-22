@@ -1,7 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let injectableDecorator;
-let injectDecorator;
+let injectableDecorator = () => {
+    // tslint:disable-next-line:no-console
+    console.warn('No dependency injection container has configured the @Injectable decorator.');
+};
+let injectDecorator = () => {
+    // tslint:disable-next-line:no-console
+    console.warn('No dependency injection container has configured the @Inject decorator.');
+};
 function configureDecorators(injectableDecoratorImpl, injectDecoratorImpl) {
     injectableDecorator = injectableDecoratorImpl;
     injectDecorator = injectDecoratorImpl;
