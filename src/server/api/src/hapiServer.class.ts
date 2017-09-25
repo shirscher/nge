@@ -1,6 +1,10 @@
 import * as hapi from 'hapi';
 import { IApiServer } from './apiServer.interface';
 
+export const HapiServerFactory = (): IApiServer => {
+    return new HapiServer();
+};
+
 export class HapiServer implements IApiServer {
     public modules: any[];
 

@@ -11,8 +11,7 @@ const testTypes_1 = require("./testTypes");
 describe('InversifyContainer', () => {
     let inversifyContainerBuilder;
     beforeEach(() => {
-        const container = new inversify_1.Container();
-        inversifyContainerBuilder = new inversifyContainerBuilder_class_1.InversifyContainerBuilder(container);
+        inversifyContainerBuilder = new inversifyContainerBuilder_class_1.InversifyContainerBuilder();
         ioc_core_1.configureDecorators(inversify_1.injectable, inversify_1.inject);
     });
     describe('resolve', () => {

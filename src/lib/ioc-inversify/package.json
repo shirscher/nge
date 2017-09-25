@@ -6,6 +6,7 @@
   "types": "./dist/main.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./node_modules && rm -rf ./dist",
     "build": "tslint . && tsc",
     "watch": "tsc -w"
   },

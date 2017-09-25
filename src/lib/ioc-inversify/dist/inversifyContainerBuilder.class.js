@@ -4,9 +4,8 @@ const inversify_1 = require("inversify");
 const inversifyContainer_class_1 = require("./inversifyContainer.class");
 const inversifyContainerRegistration_class_1 = require("./inversifyContainerRegistration.class");
 class InversifyContainerBuilder {
-    constructor(container) {
+    constructor() {
         this._registrations = [];
-        this._container = container;
     }
     register(type) {
         const registration = new inversifyContainerRegistration_class_1.InversifyContainerRegistration(type);

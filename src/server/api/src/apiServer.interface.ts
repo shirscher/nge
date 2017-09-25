@@ -1,4 +1,3 @@
-import { IDependencyConfig } from './dependencyConfig.interface';
 import { IDependencyResolver } from './dependencyResolver.interface';
 import { IEnvironment } from './environment.interface';
 import { ILoggerFactory } from './loggerFactory.interface';

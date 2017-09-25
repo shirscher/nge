@@ -73,6 +73,7 @@ import { ExpressApp } from '@nge/express-app';
 
 */
 
+import { ConsoleLoggerFactory } from '@nge/logging-core';
 import { Application } from './application.class';
 import './hapiHostBuilder/useHapi';
 
@@ -89,12 +90,6 @@ import './hapiHostBuilder/useHapi';
     host.run();
 
     //////////////////
-
-    const loggerFactory = new WinstonLoggerFactory();
-    const logger = loggerFactory.create();
-
-    const dependencies = configureDependencies(loggerFactory);
-
     const app = new Application();
 
     app.init();
