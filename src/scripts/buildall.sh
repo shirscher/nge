@@ -3,9 +3,21 @@ docker run -d --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 npm set registry http://localhost:4873
 npm adduser --registry=http://localhost:4873
 
-echo ioc-core
-cd ../lib/ioc-core
+echo core
+cd ../lib/core
 npm run clean
+rm ./package-lock.json
+echo ...installing
+npm i
+echo ...building
+npm run build
+echo ...publishing
+npm publish
+
+echo ioc-core
+cd ../ioc-core
+npm run clean
+rm ./package-lock.json
 echo ...installing
 npm i
 echo ...building
@@ -17,6 +29,19 @@ echo
 echo ioc-inversify
 cd ../ioc-inversify
 npm run clean
+rm ./package-lock.json
+echo ...installing
+npm i
+echo ...building
+npm run build
+echo ...publishing
+npm publish
+
+echo
+echo config-core
+cd ../config-core
+npm run clean
+rm ./package-lock.json
 echo ...installing
 npm i
 echo ...building
@@ -28,6 +53,7 @@ echo
 echo logging-core
 cd ../logging-core
 npm run clean
+rm ./package-lock.json
 echo ...installing
 npm i
 echo ...building
@@ -38,7 +64,8 @@ npm publish
 echo
 echo api
 cd ../../server/api
-npm clean
+npm run clean
+rm ./package-lock.json
 echo ...installing
 npm i
 echo ...building

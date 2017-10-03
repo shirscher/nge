@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { InversifyContainer } from './inversifyContainer.class';
-import { InversifyContainerBuilder } from './inversifyContainerBuilder.class';
-import { InversifyContainerRegistration } from './inversifyContainerRegistration.class';
+import { InversifyContainer } from './inversifyContainer';
+import { InversifyContainerBuilder } from './inversifyContainerBuilder';
+import { InversifyContainerRegistration } from './inversifyContainerRegistration';
 export { InversifyContainer, InversifyContainerBuilder, InversifyContainerRegistration };

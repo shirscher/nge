@@ -1,4 +1,4 @@
-import { LifetimeScope } from '@nge/ioc-core/dist/lifetimeScope.enum';
+import { LifetimeScope } from '@nge/ioc-core/dist/lifetimeScope';
 import { interfaces } from 'inversify';
 
 import { ContainerRegistration, ContainerRegistrationResolveMethod } from '@nge/ioc-core';

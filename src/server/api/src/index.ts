@@ -1,7 +1,7 @@
 /*
 What we have to do:
 
-    Basic boostrap
+    Basic bootstrap
         As little here as possible, not testable!
 
         Get a basic logger
@@ -73,25 +73,22 @@ import { ExpressApp } from '@nge/express-app';
 
 */
 
-import { ConsoleLoggerFactory } from '@nge/logging-core';
-import { Application } from './application.class';
-import './hapiHostBuilder/useHapi';
+// import './hapiHostBuilder/useHapi';
 
-(() => {
+// (() => {
 
+//     //////////////////
 
-    //////////////////
+//     const host = new ApiHostBuilder()
+//                 .useHapi()
+//                 .use()
+//                 .build();
 
-    const host = new ApiHostBuilder()
-                .useHapi()
-                .use()
-                .build();
+//     host.run();
 
-    host.run();
+//     //////////////////
+//     const app = new Application();
 
-    //////////////////
-    const app = new Application();
-
-    app.init();
-    app.start();
-})();
+//     app.init();
+//     app.start();
+// })();

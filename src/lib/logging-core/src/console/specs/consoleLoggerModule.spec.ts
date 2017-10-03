@@ -1,4 +1,3 @@
-import { Container } from "inversify";
 import 'reflect-metadata';
 
 import { IContainerBuilder } from '@nge/ioc-core';
@@ -9,14 +8,14 @@ import { ILoggerFactory } from '../../loggerFactory';
 import { Types } from '../../types';
 import { ConsoleLogger } from '../consoleLogger';
 import { ConsoleLoggerFactory } from '../consoleLoggerFactory';
-import { initConsoleLogger } from '../consoleLoggerModule';
+import { consoleLoggerModule } from '../consoleLoggerModule';
 
 describe('ConsoleLoggerModule', () => {
     let containerBuilder: IContainerBuilder;
 
     beforeEach(() => {
-        containerBuilder = new InversifyContainerBuilder(new Container());
-        initConsoleLogger(containerBuilder);
+        containerBuilder = new InversifyContainerBuilder();
+        consoleLoggerModule.initialize(containerBuilder);
     });
 
     describe('initialize', () => {

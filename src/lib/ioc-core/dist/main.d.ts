@@ -1,8 +1,8 @@
-import { IContainer } from './container.interface';
-import { IContainerBuilder } from './containerBuilder.interface';
-import { ContainerRegistration } from './containerRegistration.class';
-import { ContainerRegistrationResolveMethod } from './containerRegistrationResolveMethod.enum';
-import { IDependencyModule } from './dependencyModule.interface';
-import { configureDecorators, Inject, Injectable } from './injectable.class';
-import { LifetimeScope } from './lifetimeScope.enum';
+import { IContainer } from './container';
+import { IContainerBuilder } from './containerBuilder';
+import { ContainerRegistration } from './containerRegistration';
+import { ContainerRegistrationResolveMethod } from './containerRegistrationResolveMethod';
+import { IDependencyModule } from './dependencyModule';
+import { configureDecorators, Inject, Injectable } from './injectable';
+import { LifetimeScope } from './lifetimeScope';
 export { IContainer, IContainerBuilder, ContainerRegistration, ContainerRegistrationResolveMethod, IDependencyModule, Inject, Injectable, configureDecorators, LifetimeScope };

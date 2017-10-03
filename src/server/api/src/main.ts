@@ -5,9 +5,11 @@ import { HapiServer } from './hapiServer.class';
 import * as version from './version.json';
 
 process.on('uncaughtException', (error: Error) => {
+    // tslint:disable-next-line:no-console
     console.error(`uncaughtException ${error.message}`);
 });
 process.on('unhandledRejection', (reason: any) => {
+    // tslint:disable-next-line:no-console
     console.error(`unhandledRejection ${reason}`);
 });
 
@@ -31,8 +33,12 @@ const server = new HapiServer(); // version, containerBuilder, defaultLog);
 //    defaultLog.fatal(err);
 // });
 
-server.start(() => {
-    console.log('Server running at:', server.info.uri);
+server.start((err: Error) => {
+    if (err) {
+        defaultLog.error('Error occurred when starting server', err);
+    } else {
+        defaultLog.info('Server running at:', server.server.info ? server.server.info.uri : '');
+    }
 });
 
 defaultLog.info('App stopped');

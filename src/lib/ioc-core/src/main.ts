@@ -2,7 +2,7 @@ import { IContainer } from './container';
 import { IContainerBuilder } from './containerBuilder';
 import { ContainerRegistration } from './containerRegistration';
 import { ContainerRegistrationResolveMethod } from './containerRegistrationResolveMethod';
-import { DependencyModule } from './dependencyModule';
+import { IDependencyModule } from './dependencyModule';
 import { configureDecorators, Inject, Injectable } from './injectable';
 import { LifetimeScope } from './lifetimeScope';
 
@@ -11,7 +11,7 @@ export {
     IContainerBuilder,
     ContainerRegistration,
     ContainerRegistrationResolveMethod,
-    DependencyModule,
+    IDependencyModule,
     Inject,
     Injectable,
     configureDecorators,

@@ -1,6 +1,6 @@
-import { ContainerRegistration } from '../containerRegistration.class';
-import { ContainerRegistrationResolveMethod } from '../containerRegistrationResolveMethod.enum';
-import { LifetimeScope } from '../lifetimeScope.enum';
+import { ContainerRegistration } from '../containerRegistration';
+import { ContainerRegistrationResolveMethod } from '../containerRegistrationResolveMethod';
+import { LifetimeScope } from '../lifetimeScope';
 
 describe('containerRegistration', () => {
     it('should set the symbol from the constructor', () => {
