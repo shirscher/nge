@@ -29,6 +29,16 @@ describe('InversifyContainer', () => {
             expect(impl instanceof TestClass1A).toBeTruthy();
         });
 
+        it('should resolve classes registered as themselves', () => {
+            inversifyContainerBuilder.register<TestClass1A>(TestClass1A).asSelf();
+            const inversifyContainer = inversifyContainerBuilder.build();
+
+            const impl = inversifyContainer.resolve<TestClass1A>(TestClass1A);
+
+            expect(impl).toBeDefined(impl);
+            expect(impl instanceof TestClass1A).toBeTruthy();
+        });
+
         it('should throw an error if dependency is not registered', () => {
             const inversifyContainer = inversifyContainerBuilder.build();
             expect(() => {
@@ -44,8 +54,20 @@ describe('InversifyContainer', () => {
             const inversifyContainer = inversifyContainerBuilder.build();
             const impl = inversifyContainer.resolve<ITestInterface1>(TYPES.ITestInterface1, 'name1');
 
-            expect(impl).toBeDefined(impl);
+            expect(impl).toBeDefined();
             expect(impl instanceof TestClass1A).toBeTruthy();
+        });
+
+        it('should resolve injected dependencies', () => {
+            inversifyContainerBuilder.register<ITestInterface2>(TYPES.ITestInterface2).as(TestClass2A);
+            inversifyContainerBuilder.register<ITestInterface1>(TYPES.ITestInterface1).as(TestClass1A);
+
+            const inversifyContainer = inversifyContainerBuilder.build();
+            const impl = inversifyContainer.resolve<ITestInterface2>(TYPES.ITestInterface2);
+
+            expect(impl).toBeDefined();
+            expect(impl instanceof TestClass2A).toBeTruthy();
+            expect((impl as TestClass2A).i instanceof TestClass1A).toBeTruthy();
         });
 
         describe('when multiple implementations are registered for a type', () => {
@@ -107,9 +129,9 @@ describe('InversifyContainer', () => {
         });
 
         describe('when no dependencies are registered for a type', () => {
-            const inversifyContainer = inversifyContainerBuilder.build();
-
             it('should throw an error', () => {
+                const inversifyContainer = inversifyContainerBuilder.build();
+
                 expect(() => {
                     inversifyContainer.resolveAll<ITestInterface1>(TYPES.ITestInterface1);
                 }).toThrowError();

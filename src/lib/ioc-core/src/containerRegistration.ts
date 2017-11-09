@@ -1,12 +1,13 @@
 import { IContainer } from './container';
 import { ContainerRegistrationResolveMethod } from './containerRegistrationResolveMethod';
 import { LifetimeScope } from './lifetimeScope';
+import { INewable } from './newable';
 
 /**
  * Represents a registration in a IContainerBuilder that can be used to configure the dependency.
  */
 export class ContainerRegistration<T> {
-    protected _symbol: symbol;
+    protected _symbol: symbol | INewable<T>;
     protected _method: ContainerRegistrationResolveMethod;
     protected _factory: (container: IContainer) => T;
     protected _classType: new (...args: any[]) => T;
@@ -16,7 +17,7 @@ export class ContainerRegistration<T> {
     /**
      * Gets the symbol used to look up the dependency.
      */
-    public get symbol(): symbol {
+    public get symbol(): symbol | INewable<T> {
         return this._symbol;
     }
 
@@ -61,7 +62,7 @@ export class ContainerRegistration<T> {
      * Creates a new container registration from the specified symbol.
      * @param symbol The symbol used to identify the dependency.
      */
-    constructor(symbol: symbol) {
+    constructor(symbol: symbol | INewable<T>) {
         this._symbol = symbol;
         this._method = ContainerRegistrationResolveMethod.Self;
         this._lifetime = LifetimeScope.Instance;

@@ -1,6 +1,6 @@
 import { Container } from 'inversify';
 
-import { ContainerRegistration, IContainer, IContainerBuilder } from '@nge/ioc-core';
+import { ContainerRegistration, IContainer, IContainerBuilder, INewable } from '@nge/ioc-core';
 
 import { InversifyContainer } from './inversifyContainer';
 import { InversifyContainerRegistration } from './inversifyContainerRegistration';
@@ -9,7 +9,7 @@ import { IInversifyContainerRegistration } from './inversifyContainerRegistratio
 export class InversifyContainerBuilder implements IContainerBuilder {
     private _registrations: IInversifyContainerRegistration[] = [];
 
-    public register<T>(type: symbol): ContainerRegistration<T> {
+    public register<T>(type: symbol | INewable<T>): ContainerRegistration<T> {
         const registration = new InversifyContainerRegistration<T>(type);
         this._registrations.push(registration);
         return registration;

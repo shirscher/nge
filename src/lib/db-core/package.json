@@ -1,0 +1,23 @@
+{
+  "name": "@nge/db-core",
+  "version": "0.1.0",
+  "description": "Core framework for database access.",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./node_modules && rm -rf ./dist",
+    "build": "tslint . && tsc",
+    "watch": "tsc -w"
+  },
+  "author": "Steve Hirscher",
+  "license": "MIT",
+  "repository": "https://github.com/shirscher",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jasmine": "2.5.54",
+    "@types/node": "8.0.11",
+    "jasmine": "2.6.0",
+    "typescript": "2.4.1"
+  }
+}

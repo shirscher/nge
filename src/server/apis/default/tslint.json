@@ -1,0 +1,18 @@
+{
+    "extends": "tslint:recommended",
+    "rules": {
+        "member-ordering": [
+            true,
+            { "order": "fields-first" }
+        ],
+        "no-magic-numbers": true,
+        "no-unnecessary-type-assertions": true,
+        "//": "Disable no-used-variable in favor of tsc's --noUsedVariables and --noUnusedLocals. no-used-variable is deprecated and it doesn't support unused parameters.",
+        "no-unused-variable": false,
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
+        ]
+    }
+}

@@ -1,3 +1,5 @@
+import { INewable } from './newable';
+
 /**
  * Interface for a dependency injection container.
  */
@@ -11,7 +13,7 @@ export interface IContainer {
      * @throws Will throw an error if the specified type has not been registered in the container
      * or if the type has been registered more than once..
      */
-    resolve<T>(symbol: symbol, name?: string): T;
+    resolve<T>(symbol: symbol | INewable<T>, name?: string): T;
 
     /**
      * Resolves all registered dependencies from the container that may have multiple implementations registered.

@@ -1,5 +1,11 @@
 # Vision
 
+## Guiding Principles
+
+- SOLID Principles - https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
+- SemVer - https://semver.org
+- Twelve Factor - https://12factor.net
+
 ## Tech
 
 ### Building Blocks

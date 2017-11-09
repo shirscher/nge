@@ -11,6 +11,7 @@ export class ModuleLoader {
 
     /**
      * Reads all API modules from the specified module folder
+     *
      * @param modulePath The root modules folder path.
      * @param application The application that the modules should be loaded into.
      * @param errorCallback If specified then this callback is called whenever an error occurs loading the module. If

@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "outDir": "dist",
+        "rootDir": "src",
+        //workaround for npm linking projects and associated dupe identifier bugs: https://github.com/Microsoft/TypeScript/issues/9566#issuecomment-287633339
+        "baseUrl": "./",
+        "sourceMap": true,
+        "strict": true,
+        "declaration": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "paths": {
+            "*": [
+                "node_modules/@types/*",
+                "*"
+            ]
+        }
+    }
+}

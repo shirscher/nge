@@ -16,30 +16,23 @@ export class ConsoleLogger implements ILogger {
             return;
         }
 
+        const p: any[] = [];
+        if (this.name) {
+            p.push(this.name);
+        }
+        if (params) {
+            p.push(params);
+        }
+
         if (level === LogLevel.Error || level === LogLevel.Fatal) {
-            if (params && params.length > 0) {
-                // tslint:disable-next-line:no-console
-                console.error(message, this.name, level.name, ...params);
-            } else {
-                // tslint:disable-next-line:no-console
-                console.error(message, this.name, level.name);
-            }
+            // tslint:disable-next-line:no-console
+            console.error(message, level.name, ...p);
         } else if (level === LogLevel.Warning) {
-            if (params && params.length > 0) {
-                // tslint:disable-next-line:no-console
-                console.warn(message, this.name, level.name, ...params);
-            } else {
-                // tslint:disable-next-line:no-console
-                console.warn(message, this.name, level.name);
-            }
+            // tslint:disable-next-line:no-console
+            console.warn(message, level.name, ...p);
         } else {
-            if (params && params.length > 0) {
-                // tslint:disable-next-line:no-console
-                console.log(message, this.name, level.name, ...params);
-            } else {
-                // tslint:disable-next-line:no-console
-                console.log(message, this.name, level.name);
-            }
+            // tslint:disable-next-line:no-console
+            console.log(message, level.name, ...p);
         }
     }
 

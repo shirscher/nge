@@ -1,5 +1,6 @@
 import { IContainer } from './container';
 import { ContainerRegistration } from './containerRegistration';
+import { INewable } from './newable';
 
 /**
  * Interface for a container builder that can be used to register dependencies and create an
@@ -14,7 +15,7 @@ export interface IContainerBuilder {
      * @param [name] - If specified registers the service as a named dependency.
      * @returns A ContainerRegistration object that can be used to further configure the registration.
      */
-    register<T>(type: symbol): ContainerRegistration<T>;
+    register<T>(type: symbol | INewable<T>): ContainerRegistration<T>;
 
     /**
      * Builds the container instance.

@@ -1,0 +1,30 @@
+{
+  "name": "@nge/api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./node_modules && rm -rf ./dist",
+    "build": "tslint . && tsc",
+    "watch": "tsc -w",
+    "start": "ts-node src/main.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@nge/api-core": "0.1.0",
+    "@nge/ioc-core": "0.1.0",
+    "@nge/ioc-inversify": "0.1.0",
+    "@nge/logging-core": "0.1.0",
+    "hapi": "16.4.3",
+    "ts-node": "3.3.0"
+  },
+  "devDependencies": {
+    "@types/hapi": "16.1.6",
+    "@types/jasmine": "2.5.54",
+    "@types/node": "8.0.29",
+    "jasmine": "2.6.0",
+    "typescript": "2.4.1"
+  }
+}

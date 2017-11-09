@@ -1,0 +1,29 @@
+{
+  "name": "@nge/db-typeorm",
+  "version": "0.1.0",
+  "description": "TypeORM implementation of the core database interfaces.",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./node_modules && rm -rf ./dist",
+    "build": "tslint . && tsc",
+    "watch": "tsc -w",
+    "init": "typeorm init --name MyProject --database sqlite"
+  },
+  "author": "Steve Hirscher",
+  "license": "MIT",
+  "repository": "https://github.com/shirscher",
+  "dependencies": {
+    "@nge/db-core": "0.1.0",
+    "reflect-metadata": "0.1.10",
+    "typeorm": "0.1.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "2.5.54",
+    "@types/node": "8.0.11",
+    "jasmine": "2.6.0",
+    "sqlite3": "3.1.13",
+    "typescript": "2.4.1"
+  }
+}

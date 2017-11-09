@@ -1,3 +1,8 @@
+/**
+ * Searches
+ * @param obj The object to search.
+ * @param path The path to the property to retrieve.
+ */
 export function deepTest(obj: any, path: string): any {
     if (!obj) {
         return undefined;

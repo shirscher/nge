@@ -1,4 +1,4 @@
-import { LifetimeScope } from '@nge/ioc-core/dist/lifetimeScope';
+import { INewable, LifetimeScope } from '@nge/ioc-core';
 import { interfaces } from 'inversify';
 
 import { ContainerRegistration, ContainerRegistrationResolveMethod } from '@nge/ioc-core';
@@ -10,7 +10,7 @@ export interface IInversifyContainerRegistration {
 
 export class InversifyContainerRegistration<T> extends ContainerRegistration<T>
         implements IInversifyContainerRegistration {
-    constructor(type: symbol) {
+    constructor(type: symbol | INewable<T>) {
         super(type);
     }
 

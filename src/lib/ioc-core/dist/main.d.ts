@@ -5,4 +5,5 @@ import { ContainerRegistrationResolveMethod } from './containerRegistrationResol
 import { IDependencyModule } from './dependencyModule';
 import { configureDecorators, Inject, Injectable } from './injectable';
 import { LifetimeScope } from './lifetimeScope';
-export { IContainer, IContainerBuilder, ContainerRegistration, ContainerRegistrationResolveMethod, IDependencyModule, Inject, Injectable, configureDecorators, LifetimeScope };
+import { INewable } from './newable';
+export { IContainer, IContainerBuilder, ContainerRegistration, ContainerRegistrationResolveMethod, IDependencyModule, INewable, Inject, Injectable, configureDecorators, LifetimeScope };

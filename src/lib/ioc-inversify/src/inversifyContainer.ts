@@ -1,6 +1,6 @@
 import { Container, inject, injectable, interfaces } from 'inversify';
 
-import { IContainer } from '@nge/ioc-core';
+import { IContainer, INewable } from '@nge/ioc-core';
 import { configureDecorators } from '@nge/ioc-core';
 
 /**
@@ -10,7 +10,7 @@ export class InversifyContainer implements IContainer {
     constructor(private container: interfaces.Container) {
     }
 
-    public resolve<T>(symbol: symbol, name?: string): T {
+    public resolve<T>(symbol: symbol | INewable<T>, name?: string): T {
         return name ?
             this.container.getNamed<T>(symbol, name) :
             this.container.get<T>(symbol);
