@@ -1,5 +1,5 @@
 export interface IDbTransaction {
-    commit(): PromiseLike<void>;
+    commit(): Promise<void>;
 
-    rollback(): PromiseLike<void>;
+    rollback(): Promise<void>;
 }

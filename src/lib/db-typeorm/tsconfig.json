@@ -10,7 +10,7 @@
         "strict": true,
         "declaration": true,
         "lib": ["es6"],
-        "types": ["reflect-metadata", "jasmine"],
+        "types": ["reflect-metadata", "jasmine", "node"],
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "noUnusedLocals": true,

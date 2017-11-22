@@ -28,6 +28,18 @@ APIs
             Conversion
     Images? (temp upload, resizing, etc)
 
+Frameworks
+    Syncrhonous REST APIs
+    ASynchronous message handlers
+        Commands and events
+        Different architectures for event streams?
+    Sagas
+    Dynamic entities
+        Synchronous workflows kicked off on entity action (save, delete)
+        ASyncrhonous workflows kicked off on entity action
+            Should support user actions (e.g. approvals)
+    Dynamic forms
+
 Jobs
     Notifications
     ScheduledReports

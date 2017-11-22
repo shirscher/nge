@@ -14,7 +14,7 @@ export class TypeOrmRepository<T extends IEntity<TId>, TId> implements IReposito
         return this.repository.findOneById(id);
     }
 
-    public save(item: T): PromiseLike<void> {
+    public save(item: T): PromiseLike<T> {
         return this.repository.save([item])
             .then((value) => {
                 return value[0] as T;

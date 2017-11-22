@@ -8,6 +8,7 @@
         ],
         "no-magic-numbers": true,
         "no-unnecessary-type-assertions": true,
+        "objectliteral-sort-keys": false,
         "quotemark": [
             true,
             "single",

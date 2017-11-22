@@ -44,7 +44,8 @@ createConnection(opts).then(async (connection) => {
     user.lastName = 'Saw';
     user.age = 25;
     const repo = connection.getRepository<User>('User');
-    user = await repo.save(user);
+    // user = 
+    await repo.save(user);
     console.log('Saved a new user with id: ' + user.id);
 
     console.log('Loading users from the database...');
